@@ -254,11 +254,12 @@ export function useAnalytics(inputs){
                                       modifiedExpensesAnalytics[item._id] = item.expenses;
                           });
                      
-                          setSeries([{...series[0], data: modifiedExpensesAnalytics}]);
+                          
                      }
                      else{
                         alert('no data found')
                      }
+                     setSeries([{...series[0], data: modifiedExpensesAnalytics}]);
             }
             else{
              
@@ -270,7 +271,7 @@ export function useAnalytics(inputs){
      catch (error) {
       alert('failed in connecting to server please try after some time') 
      }
-    setYear('');
+    
   }
  
 
