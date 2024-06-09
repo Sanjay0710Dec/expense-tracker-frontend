@@ -6,7 +6,7 @@ An application built using React (I am bad at styling)
 
 ### Clone this Repo
 ```
-https://github.com/Sanjay0710Dec/expense-tracker-frontend.git
+git clone https://github.com/Sanjay0710Dec/expense-tracker-frontend.git
 ```
 
 ### Installation and Running locally
