@@ -9,9 +9,9 @@ function PurchaseGrid({Purchase,setTotalSpent}) {
     const setDeleteById = useDeleteById({userPurchaseDetails,setUserPurchaseDetails,setTotalSpent,price});
   
   return (
-    <div className='flex flex-col  gap-y-2 mt-4 relative shadow-md rounded-md mx-1 shadow-white'>
+    <div className='flex flex-col  gap-y-2 mt-4 relative border border-orange-400 rounded-md mx-1 '>
        <div className='flex flex-col'>
-            <ul className={` mt-3 flex  items-center  justify-between shadow-md shadow-orange-400 sm:text-xl font-medium px-2 py-1`}>
+            <ul className={` mt-3 flex  items-center  justify-between border-b border-white sm:text-xl font-medium px-2 py-1`}>
               <li className='w-20 sm:w-28   break-words '>{purchasedItem}</li>
               <li className=' ml-1 sm:ml-[-20px] '>{price}</li>
               <li className=' ml-4 sm:ml-[-0px]'>{category}</li>

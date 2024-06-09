@@ -7,8 +7,8 @@ import Category from '../utils/Category';
 function PurchaseEntry() {
   const[setisreadyToFetch,postPurchaseDetails,setPostPurchaseDetails] = usePurchaseEntry();
   return (
-    <div id='purchases-analytics-info-holder' className='flex justify-center items-center  '>
-       <div id="purchase-entry-holder" className='  min-w-[375px] w-[450px] px-2 pt-2'>
+    <div id='purchases-analytics-info-holder' className='flex justify-center items-center pb-1 '>
+       <div id="purchase-entry-holder" className=' min-w-[90%] md:min-w-[80%] lg:min-w-[70%] xl:min-w-[60%] 2xl:min-w-[50%] px-2 pt-2'>
 
           <Input id={'purchase'} label={'Expense'} value={postPurchaseDetails.purchasedItem} inputType={'text'} placeholder={'Nike shoe'} reminder={'*'} title={'please fill this field'} onchange={function(e){
              setPostPurchaseDetails((postPurchaseDetails) =>({...postPurchaseDetails,purchasedItem:e.target.value}))

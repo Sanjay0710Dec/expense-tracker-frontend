@@ -15,7 +15,7 @@ function UserInfo() {
 }  
 return (
     <div id='purchases-analytics-info-holder' className='flex justify-center items-center '>
-      <div id="user-info" className=' p-3 min-w-[375px] w-[500px]'>
+      <div id="user-info" className=' p-3 min-w-[95%] sm:min-w-[40%] md:min-w-[50%]'>
         <UpdateProfile/>
          <div className='mt-3 shadow-md p-2'>
             <label htmlFor="username" className='block sm:text-2xl  sm:font-medium mb-1' >Username</label>

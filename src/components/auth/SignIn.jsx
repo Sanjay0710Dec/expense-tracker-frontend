@@ -9,7 +9,7 @@ function SignIn() {
  
   return (
     <div className='h-screen  flex justify-center items-center bg-[#212529]'>
-       <div className='min-w-[375px] w-[450px] px-2 pt-2 text-white'>
+       <div className='min-w-[95%] sm:min-w-[500px] px-2 pt-2 text-white'>
         <div className='flex justify-center py-2 '><h1 className='text-3xl  font-medium'>Login</h1></div>
         <Intimate IntimateContent={"Don't have an account ?"} linkTo={'/auth/signup'} label={'Signup'}/>
          <div id='details-holder' className="mt-4">

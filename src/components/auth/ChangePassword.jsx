@@ -60,7 +60,7 @@ function ChangePassword() {
     },[PasswordDetails.isReadyToVerify])
   return (
     <div className='h-screen  flex justify-center items-center bg-[#212529]'>
-    <div className='min-w-[375px] w-[450px] px-2 pt-2 text-white '>
+    <div className='min-w-[95%] sm:min-w-[500px] px-2 pt-2 text-white '>
     <Input id={'password'} label={'Password'} value={PasswordDetails.password} inputType={passwordType} placeholder={'ex:Johndoe@099'}  reminder={''} title={'Password must contain at least 8 characters , 1 Uppercase, 1 special character, 2 numbers'} onchange={(e) => {
                    setPasswordDetails((PasswordDetails) =>({...PasswordDetails,password:e.target.value}));
             }} passwordType={passwordType} setPasswordType={setPasswordType} />
