@@ -33,7 +33,7 @@ function Root() {
 
             </div>
           </div>
-          <div id="quote" className=' mt-2 py-2 text-xl sm:text-3xl text-center'>Your Spend, We Track</div>
+          <div id="quote" className=' mt-2 py-2 text-xl sm:text-3xl text-center'>You Spend, You Track</div>
         </div>
         <div id="signup-login-helper" className='flex mt-5 sm:text-3xl sm:font-medium'>
           <div className='mr-1'>Already have an Account ?</div>
