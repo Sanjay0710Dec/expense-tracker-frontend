@@ -43,7 +43,7 @@ function VerifyToResetPassword() {
     },[isReadyToVerify])
    
   return (
-    <div className='h-screen  flex justify-center items-center bg-[#212529]'>
+    <div className='min-h-screen  flex justify-center items-center bg-[#212529]'>
         <div className='min-w-[95%] sm:min-w-[500px] px-2 pt-2 text-white '>
         <Input id={'email'} label={"Enter Email"} value={email} placeholder={"ex:johndoe@gmail.com"}  reminder={''} title={''} onchange={(e) =>{
               setEmail(e.target.value);

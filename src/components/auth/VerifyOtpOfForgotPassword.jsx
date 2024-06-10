@@ -43,7 +43,7 @@ function VerifyOtpOfForgotPassword() {
              }
     },[isReadyToVerify])
   return (
-    <div className='h-screen  flex justify-center items-center bg-[#212529]'>
+    <div className='min-h-screen  flex justify-center items-center bg-[#212529]'>
         <div className='min-w-[95%] sm:min-w-[500px] px-2 pt-2 text-white '>
         <Input id={'otp'} label={'Enter Otp'} value={otp} inputType={'text'} placeholder={'ex:987689'}  reminder={''} title={'please fill this field'} onchange={(e) => {
                    setOtp(e.target.value);
