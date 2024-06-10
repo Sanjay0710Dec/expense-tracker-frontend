@@ -24,9 +24,10 @@ function Root() {
 
 
       </div>
-      <div id="nav-bar" className={`${navBarDisplay} flex-col  items-center justify-center min-h-72]`}>
-        <div id="logo-app-name-holder" className='flex flex-col'>
-          <div className='flex items-center'>
+      
+      <div  className={`${navBarDisplay} flex-col  items-center justify-center min-h-72]`}>
+        <div id="logo-app-name-holder" className='flex flex-col justify-center '>
+          <div className='flex items-center  pl-7 sm:pl-0'>
             <img width="75" height="75" src="https://img.icons8.com/material-rounded/48/cost.png" alt="cost" className='bg-white rounded-md' />
             <div id="hero" className='ml-3'>
               <h1 className=' text-3xl sm:text-4xl sm:font-semibold'>Expense Tracker</h1>
@@ -35,6 +36,7 @@ function Root() {
           </div>
           <div id="quote" className=' mt-2 py-2 text-xl sm:text-3xl text-center'>You Spend, You Track</div>
         </div>
+
         <div id="signup-login-helper" className='flex mt-5 sm:text-3xl sm:font-medium'>
           <div className='mr-1'>Already have an Account ?</div>
           <div id="signup-holder" className='mr-1'><Link className='underline mr-1 text-blue-500' to={'/auth/login'}>Login</Link><b>:</b></div>
@@ -44,7 +46,7 @@ function Root() {
 
       </div>
 
-      <div id='email-container' className='absolute bottom-7   '>
+      <div id='email-container' className='absolute bottom-20   '>
         <div className='ml-2 sm:text-2xl text-center text-red-500
         '>For any queries or problems you face , please mail to : anonymoustech090@gmail.com</div>
       </div>
