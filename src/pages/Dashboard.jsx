@@ -31,7 +31,7 @@ function Dashboard() {
                       <li className=' border-2 border-black text-black px-7 py-3  rounded-md cursor-pointer' onClick={handleLogout}>logout</li>
                     
                     </ul>
-                    <div className=' h-16 w-16  cursor-pointer hidden  lg:block'><Link to={'/user/info'}><img src={profile === 'no_id' ? '/male-female.png': profile} className='block w-full h-full border border-black  rounded-2xl'/>userInfo</Link></div>
+                    <div className=' h-16 w-16  cursor-pointer hidden  lg:block'><Link to={'/user/info'}><img src={profile === 'no_id' ? logo: profile} className='block w-full h-full border border-black  rounded-2xl'/>userInfo</Link></div>
                     <div className="toggle-btn text-2xl sm:text-3xl block lg:hidden z-10  cursor-pointer" onClick={() =>{
                         if(togglebtnClass === "fa-solid fa-bars"){
                             settogglebtnClass("fa-solid fa-xmark");
