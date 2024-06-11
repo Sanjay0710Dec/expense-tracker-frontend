@@ -83,7 +83,7 @@ export function usePurchases(inputs){
     useEffect(function(){ 
        
        if(!loadProfile){
-        
+        setIsLoading(true);
         fetchUserPurchases();  
        }  
        
