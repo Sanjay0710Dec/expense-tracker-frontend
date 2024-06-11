@@ -67,6 +67,12 @@ function ChangePassword() {
                <Input id={'password1'} label={'Enter Password Again'} value={PasswordDetails.password1} inputType={passwordType} placeholder={'ex:Johndoe@099'}  reminder={''} title={'Password must contain at least 8 characters , 1 Uppercase, 1 special character, 2 numbers'} onchange={(e) => {
                    setPasswordDetails((PasswordDetails) =>({...PasswordDetails,password1:e.target.value}));
             }} passwordType={passwordType} setPasswordType={setPasswordType} />
+              <div id='password-regex' className='mt-2 '>
+                    <li>Password should be minimum of 8 Characters</li>
+                    <li>{'Should Contain atleast 1 UpperCase(A-Z)'}</li>
+                    <li>{'Should Contain atleast 1 Special Character(@$&^#%)'}</li>
+                    <li>{'Should Contain atleast 2  Numbers'}</li>
+                  </div>
      <Button onClick={() =>{
              setPasswordDetails((PasswordDetails) =>({...PasswordDetails,isReadyToVerify:true}));
      }} label={'Submit'}/>
