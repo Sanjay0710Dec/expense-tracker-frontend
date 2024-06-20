@@ -137,7 +137,7 @@ export function useSignIn(){
     
     const fetchUserDetails = async () =>{
       try {
-          alert("please do not update your profile, facing an issue, if you don't see this message in future which means the issue is resolved")
+        
           const response = await  fetch(`${import.meta.env.VITE_HOST}/api/v1/user/auth/details`,{
             method:'GET',
             headers:{
