@@ -125,7 +125,7 @@ export function useSignIn(){
 
 
   export function useDetails(){
-    const{loadProfile} = useContext(ProfileContextAndUserPurchases)
+   
     const [isLoading, setIsLoading] = useState(true);
 
     const[userDetails,setUserDetails] = useState({
@@ -167,9 +167,9 @@ export function useSignIn(){
     }
     useEffect(function(){
 
-            if(!loadProfile){
+     
               fetchUserDetails();
-            }
+       
     },[]);
     return {isLoading,userDetails}
 }
