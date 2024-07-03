@@ -6,26 +6,27 @@ import { ProfileContextAndUserPurchases } from '../../contexts';
 function UpdateProfile() {
 const fileExtensionRegex = /\.(jpg|png)$/
 const{setLoadProfile} = useContext(ProfileContextAndUserPurchases);
+
     const handleSubmit = async (e) =>{
          e.preventDefault();
-        
-           if(!fileExtensionRegex.test(e.target.profile.files[0].name)){
+         const file = e.target.profile.files[0];
+           if(!fileExtensionRegex.test(file.name)){
                   alert('file extension should be either jpg or png');
                   return;
            }
-        const formData = new FormData();
-        formData.append('profile', e.target.profile.files[0]);
+     
         try {
-                const response = await fetch(`${import.meta.env.VITE_HOST}/api/v1/user/auth/uploadprofile`,{
-                    method:'POST',
-                    body:formData,
-                    headers:{
-                     
-                      'Authorization': sessionStorage.getItem('auth_token'),
+                const response = await fetch(`${import.meta.env.VITE_HOST}/api/v1/user/auth/signedUrl`,{
+                  method:'PUT',
+                  body:JSON.stringify({filename:file.name,fileType:file.type}),
+                  headers:{
                    
-                      
-                    }
-                });
+                    'Authorization': sessionStorage.getItem('auth_token'),
+                    'Content-Type':"application/json"
+                 
+                    
+                  }
+              });
                 if(response.status === 401){
                   alert(response.statusText);
                    sessionStorage.removeItem('auth_token')
@@ -33,10 +34,40 @@ const{setLoadProfile} = useContext(ProfileContextAndUserPurchases);
                 }
                 const data = await response.json();
                 if(data?.success){
-                  setLoadProfile(true);
-                    alert(data?.data?.message);
-                  
-               
+                        const uploadResponse = await fetch(data.signedUrl,{
+                          method:'PUT',
+                          body:file,
+                          headers:{
+                            'Content-Type':file.type
+                          }
+                      });
+                     
+                      if(uploadResponse.ok){
+                        const confirmData = await fetch(`${import.meta.env.VITE_HOST}/api/v1/user/auth/profilename`,{
+                          method:'PUT',
+                          body:JSON.stringify({filename:file.name}),
+                          headers:{
+                           
+                            'Authorization': sessionStorage.getItem('auth_token'),
+                            'Content-Type':"application/json"
+                         
+                            
+                          }
+                        });
+                   
+                        const data = await confirmData.json();
+                      
+                        if(data.success){
+                          setLoadProfile(true);
+                          alert(data.data.message);
+                        }
+                        else{
+                             alert(data.message);
+                        }
+                  }
+                  else{
+                    alert('failed to update profile')
+                  }
                    
                 } 
                 else{
